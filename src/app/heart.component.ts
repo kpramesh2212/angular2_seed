@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'heart',
@@ -17,8 +17,8 @@ import { Component } from '@angular/core';
     `]
 })
 export class HeartComponent {
-  isLiked = false;
-  totalLikes = 10;
+  @Input() isLiked = false;
+  @Input() totalLikes = 10;
 
   whenLiked() {
     this.isLiked = !this.isLiked;
