@@ -15,7 +15,10 @@ import { TweetService } from './tweet.service';
         [totalLikes]="t.totalLikes"
         [isLiked]="t.isLiked"
       ></tweet><br>
-    </div>
+    </div><br>
+    <templatedemo></templatedemo>
+    <zippy>Content of who can see my stuff</zippy>
+    <zippy>Content of who can see my stuff</zippy>
     `,
 })
 export class AppComponent  {
