@@ -5,17 +5,7 @@ import { TweetService } from './tweet.service';
   selector: 'my-app',
   template: `
     <h1>Hello {{name}}</h1>
-    <heart></heart>
-    <div *ngFor="let t of tweets">
-      <tweet
-        [imageUrl]="t.imageUrl"
-        [author]="t.author"
-        [handler]="t.handler"
-        [description]="t.description"
-        [totalLikes]="t.totalLikes"
-        [isLiked]="t.isLiked"
-      ></tweet><br>
-    </div>
+    <complex-form></complex-form>
     `,
 })
 export class AppComponent  {
