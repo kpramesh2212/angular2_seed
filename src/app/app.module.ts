@@ -16,6 +16,7 @@ import { ComplexFormComponent } from './complex-form.component';
 import { FormBuilderFormComponent } from './form-builder-form.component';
 import { CustomFormValidationComponent } from './custom-form-validation.component';
 import { ChangePasswordFormComponent } from './change-password-form.component';
+import { RxSearchComponent } from './rxsearch.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, ReactiveFormsModule ],
@@ -31,7 +32,8 @@ import { ChangePasswordFormComponent } from './change-password-form.component';
     ComplexFormComponent,
     FormBuilderFormComponent,
     CustomFormValidationComponent,
-    ChangePasswordFormComponent
+    ChangePasswordFormComponent,
+    RxSearchComponent
   ],
   bootstrap:    [ AppComponent ],
   providers:    [TweetService]

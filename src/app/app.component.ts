@@ -5,7 +5,7 @@ import { TweetService } from './tweet.service';
   selector: 'my-app',
   template: `
     <h1>Hello {{name}}</h1>
-    <change-password-form></change-password-form>
+    <rxsearch></rxsearch>
     `,
 })
 export class AppComponent  {

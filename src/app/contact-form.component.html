@@ -6,7 +6,7 @@
            ngModel
            name="first"
            #f="ngModel"
-           class="form-control" required/>
+           class="form-control" required (change)="whenChanged(f)"/>
            <div *ngIf="f.touched && !f.valid" class="alert alert-danger">First name is required!</div>
   </div>
   <div class="form-group">
