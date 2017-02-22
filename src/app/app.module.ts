@@ -13,6 +13,9 @@ import { ZippyComponent } from './zippy.component';
 import { ContactFormComponent } from './contact-form.component';
 import { SubscriptionFormComponent } from './subscription-form.component';
 import { ComplexFormComponent } from './complex-form.component';
+import { FormBuilderFormComponent } from './form-builder-form.component';
+import { CustomFormValidationComponent } from './custom-form-validation.component';
+import { ChangePasswordFormComponent } from './change-password-form.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, ReactiveFormsModule ],
@@ -25,7 +28,10 @@ import { ComplexFormComponent } from './complex-form.component';
     ZippyComponent,
     ContactFormComponent,
     SubscriptionFormComponent,
-    ComplexFormComponent
+    ComplexFormComponent,
+    FormBuilderFormComponent,
+    CustomFormValidationComponent,
+    ChangePasswordFormComponent
   ],
   bootstrap:    [ AppComponent ],
   providers:    [TweetService]
