@@ -106,6 +106,9 @@ export class RxSearchComponent {
     Observable.throw(new Error("error")).subscribe(x => console.log(x), e => console.error(e), () => console.log('Done error'))
     Observable.from([1, 2, 3]).subscribe(x => console.log(x), e => console.error(e), () => console.log('Done error'))
 
+    Observable.from([1, 2, 3])
+              .flatMap(x => Observable.of(['a', 'b', 'c']))
+              .subscribe(x => console.log(x));
 
   }
 

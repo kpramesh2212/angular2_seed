@@ -17,9 +17,15 @@ import { FormBuilderFormComponent } from './form-builder-form.component';
 import { CustomFormValidationComponent } from './custom-form-validation.component';
 import { ChangePasswordFormComponent } from './change-password-form.component';
 import { RxSearchComponent } from './rxsearch.component';
+import { PostService } from './post.service';
+import { HttpModule } from '@angular/http';
+import { JsonpModule } from '@angular/http';
+import { PostComponent } from './post.component';
+import { GitService } from './git.service';
+import { GitUserComponent } from './gituser.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule ],
+  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, HttpModule, JsonpModule],
   declarations: [
     AppComponent,
     HeartComponent,
@@ -33,9 +39,12 @@ import { RxSearchComponent } from './rxsearch.component';
     FormBuilderFormComponent,
     CustomFormValidationComponent,
     ChangePasswordFormComponent,
-    RxSearchComponent
+    RxSearchComponent,
+    PostComponent,
+    GitUserComponent
   ],
   bootstrap:    [ AppComponent ],
-  providers:    [TweetService]
+  providers:    [
+    TweetService, PostService, GitService  ]
 })
 export class AppModule { }
