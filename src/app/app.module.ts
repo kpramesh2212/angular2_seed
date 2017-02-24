@@ -23,6 +23,9 @@ import { JsonpModule } from '@angular/http';
 import { PostComponent } from './post.component';
 import { GitService } from './git.service';
 import { GitUserComponent } from './gituser.component';
+import { TodoComponent } from './todo.component';
+import { TodoItemComponent } from './todo-item.component';
+import { TodoService } from './todo.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, HttpModule, JsonpModule],
@@ -41,10 +44,16 @@ import { GitUserComponent } from './gituser.component';
     ChangePasswordFormComponent,
     RxSearchComponent,
     PostComponent,
-    GitUserComponent
+    GitUserComponent,
+    TodoComponent,
+    TodoItemComponent
   ],
   bootstrap:    [ AppComponent ],
   providers:    [
-    TweetService, PostService, GitService  ]
+    TweetService,
+    PostService,
+    GitService,
+    TodoService
+  ]
 })
 export class AppModule { }

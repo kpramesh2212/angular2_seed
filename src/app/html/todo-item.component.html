@@ -1,0 +1,11 @@
+<div class="panel panel-default" [ngClass]="{
+alert: completed,
+'alert-success': completed
+}">
+  <div class="panel-body">
+    <span class="pull-left">
+      <input type="checkbox" class="form-group"  (click)="toggle($event.target.checked)">
+    </span>&nbsp;&nbsp;{{value}}
+    <span class="glyphicon glyphicon-remove pull-right" (click)="onRemove()"></span>
+  </div>
+</div>

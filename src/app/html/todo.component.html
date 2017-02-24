@@ -1,0 +1,5 @@
+<h1>todo list</h1>
+<input type="text" class="form-control" [formControl]="taskAdder" (change)="onChange($event.target.value)">
+<div *ngFor="let t of tasks">
+  <todo-item [value]="t" (taskNotification)="onTaskNotification($event)"></todo-item>
+</div>
