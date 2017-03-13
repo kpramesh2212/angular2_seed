@@ -31,6 +31,10 @@ import { AlbumsComponent } from './albums.component';
 import { AlbumComponent } from './album.component';
 import { ContactComponent } from './contact.component';
 import { NavGuard }  from './nav-guard.service';
+import { ArchivesService } from './archives.service';
+import { ArchivesComponent } from './archives.component';
+import { ArchiveComponent } from './archive.component';
+import { RouteExe } from './app-exe.routing';
 
 @NgModule({
   imports:      [
@@ -39,7 +43,8 @@ import { NavGuard }  from './nav-guard.service';
     ReactiveFormsModule,
     HttpModule,
     JsonpModule,
-    appRoute
+    //appRoute
+    RouteExe
   ],
   declarations: [
     AppComponent,
@@ -61,7 +66,9 @@ import { NavGuard }  from './nav-guard.service';
     TodoItemComponent,
     AlbumsComponent,
     ContactComponent,
-    AlbumComponent
+    AlbumComponent,
+    ArchivesComponent,
+    ArchiveComponent
   ],
   bootstrap:    [ AppComponent ],
   providers:    [
@@ -69,7 +76,8 @@ import { NavGuard }  from './nav-guard.service';
     PostService,
     GitService,
     TodoService,
-    NavGuard
+    NavGuard,
+    ArchivesService
   ]
 })
 export class AppModule { }
