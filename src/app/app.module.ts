@@ -26,9 +26,21 @@ import { GitUserComponent } from './gituser.component';
 import { TodoComponent } from './todo.component';
 import { TodoItemComponent } from './todo-item.component';
 import { TodoService } from './todo.service';
+import { appRoute } from './app.routing';
+import { AlbumsComponent } from './albums.component';
+import { AlbumComponent } from './album.component';
+import { ContactComponent } from './contact.component';
+import { NavGuard }  from './nav-guard.service';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, HttpModule, JsonpModule],
+  imports:      [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule,
+    JsonpModule,
+    appRoute
+  ],
   declarations: [
     AppComponent,
     HeartComponent,
@@ -46,14 +58,18 @@ import { TodoService } from './todo.service';
     PostComponent,
     GitUserComponent,
     TodoComponent,
-    TodoItemComponent
+    TodoItemComponent,
+    AlbumsComponent,
+    ContactComponent,
+    AlbumComponent
   ],
   bootstrap:    [ AppComponent ],
   providers:    [
     TweetService,
     PostService,
     GitService,
-    TodoService
+    TodoService,
+    NavGuard
   ]
 })
 export class AppModule { }
