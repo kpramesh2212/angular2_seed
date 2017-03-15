@@ -9,6 +9,8 @@ import {PostsComponent} from "./posts.component";
 import {RootRoute} from "./app.routing";
 import {HttpModule, JsonpModule} from "@angular/http";
 import {UserService} from "./users.service";
+import {UserAddComponent} from "./useradd.component";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -16,14 +18,17 @@ import {UserService} from "./users.service";
     BrowserModule,
     RootRoute,
     HttpModule,
-    JsonpModule
+    JsonpModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AppComponent,
     NavBarComponent,
     HomeComponent,
     UsersComponent,
-    PostsComponent
+    PostsComponent,
+    UserAddComponent
   ],
   providers: [
     UserService
