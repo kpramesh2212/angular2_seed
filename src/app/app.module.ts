@@ -11,6 +11,7 @@ import {HttpModule, JsonpModule} from "@angular/http";
 import {UserService} from "./users.service";
 import {UserAddComponent} from "./useradd.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {NavGuard} from "./nav-guard.service";
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     UserAddComponent
   ],
   providers: [
-    UserService
+    UserService,
+    NavGuard
   ],
   bootstrap: [
     AppComponent

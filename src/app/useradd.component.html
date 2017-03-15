@@ -1,14 +1,14 @@
 <h1>Add User</h1>
 <div class="col-md-6 col-lg-6 well">
-<form [formGroup]="addUserForm">
+<form [formGroup]="frm">
   <fieldset>
     <legend>User</legend>
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" id="name" class="form-control" formControlName="nameControl">
       <div class="alert alert-danger"
-           *ngIf="addUserForm.controls.nameControl.touched
-                  && addUserForm.controls.nameControl.errors">
+           *ngIf="frm.controls.nameControl.touched
+                  && frm.controls.nameControl.errors">
         Name is required!
       </div>
     </div>
@@ -16,10 +16,10 @@
       <label for="email">Email</label>
       <input type="text" id="email" class="form-control" formControlName="emailControl">
       <div class="alert alert-danger"
-           *ngIf="addUserForm.controls.emailControl.touched
-                  && addUserForm.controls.emailControl.errors">
-        <span *ngIf="addUserForm.controls.emailControl.errors.required">Email is required!</span>
-        <span *ngIf="addUserForm.controls.emailControl.errors.validEmail">Invalid email!</span>
+           *ngIf="frm.controls.emailControl.touched
+                  && frm.controls.emailControl.errors">
+        <span *ngIf="frm.controls.emailControl.errors.required">Email is required!</span>
+        <span *ngIf="frm.controls.emailControl.errors.validEmail">Invalid email!</span>
       </div>
     </div>
     <div class="form-group">
@@ -46,6 +46,6 @@
       <input type="text" class="form-control" id="zipcode" formControlName="zipControl">
     </div>
   </fieldset>
-  <button class="btn btn-primary" type="submit" [disabled]="!addUserForm.valid">save</button>
+  <button class="btn btn-primary" type="submit" [disabled]="!frm.valid">save</button>
 </form>
 </div>
