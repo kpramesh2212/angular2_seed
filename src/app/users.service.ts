@@ -15,5 +15,9 @@ export class UserService {
         .map(response => response.json());
   }
 
+  addUser(body: User) {
+    return this._http.post("http://jsonplaceholder.typicode.com/users", body)
+      .map(res => res.json());
+  }
 
 }
