@@ -36,7 +36,7 @@ export class UserAddComponent implements FormComponent, OnInit {
   ngOnInit() {
     this._activatedRoute.params.subscribe(param => {
       var id = +param["id"];
-      if (id != undefined && !isNaN(id)) {
+      if (id) {
         this.title = "Edit User";
         this._userService.getUser(id)
                           .subscribe(x => {
@@ -49,12 +49,16 @@ export class UserAddComponent implements FormComponent, OnInit {
   }
 
   userAdd() {
-    this._userService.addUser(this.frm.value).subscribe((x: User) => {
-      alert("User " + x.name + " has been created successfully with id : " + x.id);
-      this.frm.markAsPristine();
-      this._router.navigate(['users']);
-    });
+    if (this.user.id) {
+      this._userService.updateUser(this.frm.value, this.user.id).subscribe((x) => {
+        alert("Updated User");
+      })
+    } else {
+      this._userService.addUser(this.frm.value).subscribe((x: User) => {
+        alert("User " + x.name + " has been created successfully with id : " + x.id);
+        this.frm.markAsPristine();
+        this._router.navigate(['users']);
+      });
+    }
   }
-
-
 }

@@ -17,13 +17,22 @@ export class UserService {
   }
 
   getUser(id: number): Observable<User> {
-    return this._http.get(this._baseUrl + "/" + id)
+    return this._http.get(this.getUserUrl(id))
                .map(response => response.json());
   }
 
   addUser(body: User) {
     return this._http.post(this._baseUrl, body)
       .map(res => res.json());
+  }
+
+  updateUser(body: User, id: number) {
+    return this._http.put(this.getUserUrl(id), body)
+      .map(res => res.json());
+  }
+
+  private getUserUrl(id: number) {
+    return this._baseUrl + "/" + id;
   }
 
 }
