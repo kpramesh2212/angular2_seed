@@ -14,6 +14,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NavGuard} from "./nav-guard.service";
 import {NotFoundComponent} from "./notfound.component";
 import {PostService} from "./post.service";
+import {SpinnerComponent} from "./spinner.component";
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {PostService} from "./post.service";
     UsersComponent,
     PostsComponent,
     UserAddComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SpinnerComponent
   ],
   providers: [
     UserService,
