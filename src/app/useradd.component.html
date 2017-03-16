@@ -1,49 +1,76 @@
-<h1>Add User</h1>
+<h1>{{title}}</h1>
 <div class="col-md-6 col-lg-6 well">
 <form [formGroup]="frm">
   <fieldset>
     <legend>User</legend>
     <div class="form-group">
       <label for="name">Name</label>
-      <input type="text" id="name" class="form-control" formControlName="nameControl">
+      <input type="text" id="name"
+             class="form-control"
+             [(ngModel)]="user.name"
+             formControlName="name">
       <div class="alert alert-danger"
-           *ngIf="frm.controls.nameControl.touched
-                  && frm.controls.nameControl.errors">
+           *ngIf="frm.controls.name.touched
+                  && frm.controls.name.errors">
         Name is required!
       </div>
     </div>
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="text" id="email" class="form-control" formControlName="emailControl">
+      <input type="text"
+             id="email"
+             class="form-control"
+             [(ngModel)]="user.email"
+             formControlName="email">
       <div class="alert alert-danger"
-           *ngIf="frm.controls.emailControl.touched
-                  && frm.controls.emailControl.errors">
-        <span *ngIf="frm.controls.emailControl.errors.required">Email is required!</span>
-        <span *ngIf="frm.controls.emailControl.errors.validEmail">Invalid email!</span>
+           *ngIf="frm.controls.email.touched
+                  && frm.controls.email.errors">
+        <span *ngIf="frm.controls.email.errors.required">Email is required!</span>
+        <span *ngIf="frm.controls.email.errors.validEmail">Invalid email!</span>
       </div>
     </div>
     <div class="form-group">
       <label for="phone">Phone</label>
-      <input type="text" id="phone" class="form-control" formControlName="phoneControl">
+      <input type="text"
+             id="phone"
+             class="form-control"
+             [(ngModel)]="user.phone"
+             formControlName="phone">
     </div>
   </fieldset>
-  <fieldset>
+  <fieldset formGroupName="address">
     <legend>Address</legend>
     <div class="form-group">
       <label for="street">Street</label>
-      <input type="text" class="form-control" id="street" formControlName="streetControl">
+      <input type="text"
+             class="form-control"
+             id="street"
+             [(ngModel)]="user.address.street"
+             formControlName="street">
     </div>
     <div class="form-group">
       <label for="suite">Suite</label>
-      <input type="text" class="form-control" id="suite" formControlName="suiteControl">
+      <input type="text"
+             class="form-control"
+             id="suite"
+             [(ngModel)]="user.address.suite"
+             formControlName="suite">
     </div>
     <div class="form-group">
       <label for="city">City</label>
-      <input type="text" class="form-control" id="city" formControlName="cityControl">
+      <input type="text"
+             class="form-control"
+             id="city"
+             [(ngModel)]="user.address.city"
+             formControlName="city">
     </div>
     <div class="form-group">
       <label for="zipcode">ZipCode</label>
-      <input type="text" class="form-control" id="zipcode" formControlName="zipControl">
+      <input type="text"
+             class="form-control"
+             id="zipcode"
+             [(ngModel)]="user.address.zipcode"
+             formControlName="zipcode">
     </div>
   </fieldset>
   <button class="btn btn-primary"

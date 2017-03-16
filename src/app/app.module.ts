@@ -12,6 +12,7 @@ import {UserService} from "./users.service";
 import {UserAddComponent} from "./useradd.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NavGuard} from "./nav-guard.service";
+import {NotFoundComponent} from "./notfound.component";
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import {NavGuard} from "./nav-guard.service";
     HomeComponent,
     UsersComponent,
     PostsComponent,
-    UserAddComponent
+    UserAddComponent,
+    NotFoundComponent
   ],
   providers: [
     UserService,
