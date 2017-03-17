@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {PostService} from "./post.service";
-import {Post} from "./post";
+import {Post, Comment} from "./post";
 import 'rxjs/add/operator/delay';
 
 @Component({
@@ -14,6 +14,10 @@ import 'rxjs/add/operator/delay';
     .selected {
       background: #f5f5f5;
     }
+    
+    .rounded-img {
+      border-radius: 100%;
+    }
   
   `]
 })
@@ -21,6 +25,7 @@ export class PostsComponent implements OnInit {
   posts : Post[];
   selectedPost: Post;
   isLoading = true;
+  commentLoading = true;
 
   constructor(
     private _ps: PostService
@@ -29,7 +34,7 @@ export class PostsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._ps.getPosts().delay(2000).subscribe(posts => {
+    this._ps.getPosts().delay(1000).subscribe(posts => {
       this.posts = posts;
       this.isLoading = false;
     });
@@ -37,6 +42,13 @@ export class PostsComponent implements OnInit {
 
   onClick(post: Post) {
     this.selectedPost = post;
+    this.selectedPost.comments = [];
+    this.commentLoading = true;
+    this._ps.getComments(post.id).delay(1000).subscribe(com => {
+      this.selectedPost.comments = com;
+      this.commentLoading = false;
+    })
+
   }
 
 }

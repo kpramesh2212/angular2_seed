@@ -16,5 +16,9 @@ export class PostService {
     return this._http.get(this._baseUrl).map(res => res.json());
   }
 
+  getComments(postId: number) {
+    return this._http.get(this._baseUrl + "/" + postId + "/comments").map(res => res.json());
+  }
+
 
 }

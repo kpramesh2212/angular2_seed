@@ -3,4 +3,13 @@ export interface Post {
   id: number;
   title: string;
   body: string;
+  comments: Comment[];
+}
+
+export interface Comment {
+  postId: number;
+  id: number;
+  email: string;
+  name: string;
+  body: string;
 }

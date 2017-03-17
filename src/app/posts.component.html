@@ -17,7 +17,23 @@
         <h3 class="panel-title">{{selectedPost.title}}</h3>
       </div>
       <div class="panel-body">
-        {{selectedPost.body}}
+        <p>{{selectedPost.body}}</p>
+        <hr>
+        <spinner [visible]="commentLoading"></spinner>
+        <div *ngFor="let comment of selectedPost.comments">
+          <div class="media">
+            <div class="media-left media-middle">
+              <a href="#">
+                <img class="media-object rounded-img" src="http://lorempixel.com/80/80/people?random={{comment.id}}" alt="...">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">{{comment.name}}</h4>
+              {{comment.body}}
+            </div>
+          </div>
+          <br>
+        </div>
       </div>
     </div>
   </div>
