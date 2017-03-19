@@ -1,7 +1,13 @@
 <h1>Posts</h1>
 <div class="row">
   <div class="col-md-6">
-    <spinner [visible]="isLoading"></spinner>
+    <div>
+      <select name="users" #u u="ngModel" class="form-control" (change)="whenChanged({userId: u.value})">
+        <option value="">Select a user</option>
+        <option *ngFor="let user of users" value="{{user.id}}">{{user.name}}</option>
+      </select>
+    </div>
+    <spinner [visible]="postsLoading"></spinner>
     <ul class="list-group">
       <li class="list-group-item"
           [class.selected]="post == selectedPost"
@@ -19,7 +25,7 @@
       <div class="panel-body">
         <p>{{selectedPost.body}}</p>
         <hr>
-        <spinner [visible]="commentLoading"></spinner>
+        <spinner [visible]="commentsLoading"></spinner>
         <div *ngFor="let comment of selectedPost.comments">
           <div class="media">
             <div class="media-left media-middle">
