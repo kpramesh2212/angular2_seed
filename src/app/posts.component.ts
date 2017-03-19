@@ -56,7 +56,7 @@ export class PostsComponent implements OnInit {
     this.loadPosts(filter);
   }
 
-  loadPosts(filter?: {userId: number}) {
+  private loadPosts(filter?: {userId: number}) {
     this.resetPost();
     this.postsLoading = true;
     this._ps.getPosts(filter).delay(1000).subscribe(posts => {
@@ -65,7 +65,7 @@ export class PostsComponent implements OnInit {
     });
   }
 
-  loadCommentsForPost(postId: number) {
+  private loadCommentsForPost(postId: number) {
     this.selectedPost.comments = [];
     this.commentsLoading = true;
     this._ps.getComments(postId).delay(1000).subscribe(com => {
@@ -74,13 +74,13 @@ export class PostsComponent implements OnInit {
     })
   }
 
-  loadUsers() {
+  private loadUsers() {
     this._us.getUsers().subscribe(users => {
       this.users = users;
     })
   }
 
-  resetPost() {
+  private resetPost() {
     this.selectedPost = "";
     this.posts=[];
   }
