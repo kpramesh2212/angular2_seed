@@ -8,10 +8,11 @@
       </select>
     </div>
     <spinner [visible]="postsLoading"></spinner>
+    <pagination [items]="posts" [pageSize]="pageSize" (pageChange)="onPageChanged($event)"></pagination>
     <ul class="list-group">
       <li class="list-group-item"
           [class.selected]="post == selectedPost"
-          *ngFor="let post of posts"
+          *ngFor="let post of pagedPosts"
           (click)="onClick(post)">
         {{post.title}}
       </li>

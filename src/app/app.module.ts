@@ -15,6 +15,7 @@ import {NavGuard} from "./nav-guard.service";
 import {NotFoundComponent} from "./notfound.component";
 import {PostService} from "./post.service";
 import {SpinnerComponent} from "./spinner.component";
+import {PaginationComponent} from "./pagination.component";
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import {SpinnerComponent} from "./spinner.component";
     PostsComponent,
     UserAddComponent,
     NotFoundComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    PaginationComponent
   ],
   providers: [
     UserService,

@@ -35,6 +35,9 @@ export class PostsComponent implements OnInit {
   postsLoading = true;
   commentsLoading = true;
 
+  pageSize = 10;
+  pagedPosts :Post[];
+
   constructor(
     private _ps: PostService,
     private _us: UserService
@@ -61,6 +64,12 @@ export class PostsComponent implements OnInit {
     this.postsLoading = true;
     this._ps.getPosts(filter).delay(1000).subscribe(posts => {
       this.posts = posts;
+
+      if (posts.length > this.pageSize)
+        this.pagedPosts = posts.slice(0, this.pageSize);
+      else
+        this.pagedPosts = posts;
+
       this.postsLoading = false;
     });
   }
@@ -81,7 +90,15 @@ export class PostsComponent implements OnInit {
   }
 
   private resetPost() {
-    this.selectedPost = "";
-    this.posts=[];
+    this.selectedPost = null;
+    this.posts= [];
+    this.pagedPosts = [];
+  }
+
+  onPageChanged(event: { page: number}) {
+    var page = event.page;
+    var start = (page * this.pageSize) - this.pageSize;
+    var end = (page * this.pageSize)
+    this.pagedPosts = this.posts.slice(start, end);
   }
 }

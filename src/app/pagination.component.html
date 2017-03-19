@@ -1,0 +1,19 @@
+<nav aria-label="Page navigation" *ngIf="pages.length > 1">
+  <ul class="pagination">
+    <li (click)="onClick(-1)" [class.disabled]="selectedPage == 1">
+      <a aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li *ngFor="let n of pages;let i=index;"
+        [class.active]="selectedPage == i+1"
+        (click)="selectPage(i+1)">
+      <a>{{i+1}}</a>
+    </li>
+    <li (click)="onClick(1)" [class.disabled]="selectedPage == pages.length">
+      <a aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
