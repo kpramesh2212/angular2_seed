@@ -4,18 +4,18 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent}  from './app.component';
 import {NavBarComponent} from './navbar.component';
 import {HomeComponent} from "./home.component";
-import {UsersComponent} from "./users.component";
-import {PostsComponent} from "./posts.component";
+import {UsersComponent} from "./users/users.component";
+import {PostsComponent} from "./posts/posts.component";
 import {RootRoute} from "./app.routing";
 import {HttpModule, JsonpModule} from "@angular/http";
-import {UserService} from "./users.service";
-import {UserAddComponent} from "./useradd.component";
+import {UserService} from "./users/users.service";
+import {UserAddComponent} from "./users/useradd.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NavGuard} from "./nav-guard.service";
 import {NotFoundComponent} from "./notfound.component";
-import {PostService} from "./post.service";
-import {SpinnerComponent} from "./spinner.component";
-import {PaginationComponent} from "./pagination.component";
+import {PostService} from "./posts/post.service";
+import {SpinnerComponent} from "./shared/spinner.component";
+import {PaginationComponent} from "./shared/pagination.component";
 
 
 @NgModule({

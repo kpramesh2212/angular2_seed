@@ -2,11 +2,11 @@ import {Component, OnInit} from "@angular/core";
 import {PostService} from "./post.service";
 import {Post, Comment} from "./post";
 import 'rxjs/add/operator/delay';
-import {UserService} from "./users.service";
-import {User} from "./user";
+import {UserService} from "../users/users.service";
+import {User} from "../users/user";
 
 @Component({
-  templateUrl: '/app/posts.component.html',
+  templateUrl: '/app/posts/posts.component.html',
   styles: [`
     
     ul.list-group li.list-group-item:hover {
@@ -29,7 +29,7 @@ export class PostsComponent implements OnInit {
   postsLoading = true;
   commentsLoading = true;
 
-  pageSize = 7;
+  pageSize = 10;
   pagedPosts :Post[];
 
   constructor(

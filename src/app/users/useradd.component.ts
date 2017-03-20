@@ -1,13 +1,13 @@
 import {Component, OnInit} from "@angular/core";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {UserValidators} from "./user.validators";
-import {FormComponent} from "./formcomponent";
+import {FormComponent} from "../formcomponent";
 import {UserService} from "./users.service";
 import { User } from "./user";
 import {Router, ActivatedRoute} from "@angular/router";
 
 @Component({
-  templateUrl: '/app/useradd.component.html'
+  templateUrl: '/app/users/useradd.component.html'
 })
 export class UserAddComponent implements FormComponent, OnInit {
   frm: FormGroup;

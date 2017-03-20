@@ -3,7 +3,7 @@ import {Component, Input, OnInit, OnChanges, EventEmitter, Output} from "@angula
 
 @Component({
   selector: 'pagination',
-  templateUrl: '/app/pagination.component.html'
+  templateUrl: '/app/shared/pagination.component.html'
 })
 export class PaginationComponent implements OnInit, OnChanges {
   @Input() items: Array<any>;

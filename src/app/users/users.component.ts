@@ -3,7 +3,7 @@ import {UserService} from "./users.service";
 import {User} from "./user";
 
 @Component({
-  templateUrl: '/app/users.component.html',
+  templateUrl: '/app/users/users.component.html',
   styles: [`
      .pointer {
         cursor: pointer;
