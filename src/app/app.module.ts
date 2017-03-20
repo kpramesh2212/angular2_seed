@@ -16,11 +16,15 @@ import {NotFoundComponent} from "./notfound.component";
 import {PostService} from "./posts/post.service";
 import {SpinnerComponent} from "./shared/spinner.component";
 import {PaginationComponent} from "./shared/pagination.component";
+import {PostsRoute} from "./posts/posts.routing";
+import {UserRoute} from "./users/users.routing";
 
 
 @NgModule({
   imports: [
     BrowserModule,
+    UserRoute,
+    PostsRoute,
     RootRoute,
     HttpModule,
     JsonpModule,
