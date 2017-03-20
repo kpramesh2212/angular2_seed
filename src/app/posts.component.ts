@@ -20,12 +20,6 @@ import {User} from "./user";
     .rounded-img {
       border-radius: 100%;
     }
-    
-    .carot {
-      background: url('/app/carot.png') no-repeat right;
-      background-size: 100px 100px;
-    }
-  
   `]
 })
 export class PostsComponent implements OnInit {
@@ -35,7 +29,7 @@ export class PostsComponent implements OnInit {
   postsLoading = true;
   commentsLoading = true;
 
-  pageSize = 10;
+  pageSize = 7;
   pagedPosts :Post[];
 
   constructor(
@@ -66,7 +60,7 @@ export class PostsComponent implements OnInit {
       this.posts = posts;
 
       if (posts.length > this.pageSize)
-        this.pagedPosts = posts.slice(0, this.pageSize);
+        this.pagedPosts = this.getPostsForPage(1);
       else
         this.pagedPosts = posts;
 
@@ -96,9 +90,12 @@ export class PostsComponent implements OnInit {
   }
 
   onPageChanged(event: { page: number}) {
-    var page = event.page;
+    this.pagedPosts = this.getPostsForPage(event.page);
+  }
+
+  private getPostsForPage(page: number) {
     var start = (page * this.pageSize) - this.pageSize;
     var end = (page * this.pageSize)
-    this.pagedPosts = this.posts.slice(start, end);
+    return this.posts.slice(start, end);
   }
 }
