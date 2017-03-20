@@ -95,7 +95,7 @@ export class PostsComponent implements OnInit {
 
   private getPostsForPage(page: number) {
     var start = (page * this.pageSize) - this.pageSize;
-    var end = (page * this.pageSize)
+    var end = (page * this.pageSize);
     return this.posts.slice(start, end);
   }
 }
