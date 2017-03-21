@@ -8,8 +8,6 @@ import {RootRoute} from "./app.routing";
 import {NotFoundComponent} from "./notfound.component";
 import {PostsModule} from "./posts/posts.module";
 import {UsersModule} from "./users/users.module";
-import {NavGuard} from "./nav-guard.service";
-
 
 @NgModule({
   imports: [
@@ -25,7 +23,6 @@ import {NavGuard} from "./nav-guard.service";
     NotFoundComponent
   ],
   providers: [
-    NavGuard
   ],
   bootstrap: [
     AppComponent

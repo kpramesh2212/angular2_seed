@@ -3,7 +3,7 @@ import {UsersComponent} from "./users/users.component";
 import {HomeComponent} from "./home.component";
 import {PostsComponent} from "./posts/posts.component";
 import {UserAddComponent} from "./users/useradd.component";
-import {NavGuard} from "./nav-guard.service";
+import {NavGuard} from "./shared/nav-guard.service";
 import {NotFoundComponent} from "./notfound.component";
 
 export const RootRoute = RouterModule.forRoot([
