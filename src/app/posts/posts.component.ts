@@ -86,10 +86,11 @@ export class PostsComponent implements OnInit {
   private resetPost() {
     this.selectedPost = null;
     this.posts= [];
-    this.pagedPosts = [];
   }
 
   onPageChanged(event: { page: number}) {
+    this.pagedPosts = [];
+    this.selectedPost = null;
     this.pagedPosts = this.getPostsForPage(event.page);
   }
 
