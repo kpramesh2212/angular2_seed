@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {PostService} from "./post.service";
-import {Post, Comment} from "./post";
+import {Post} from "./post";
 import 'rxjs/add/operator/delay';
 import {UserService} from "../users/users.service";
 import {User} from "../users/user";
@@ -86,6 +86,7 @@ export class PostsComponent implements OnInit {
   private resetPost() {
     this.selectedPost = null;
     this.posts= [];
+    this.pagedPosts = [];
   }
 
   onPageChanged(event: { page: number}) {

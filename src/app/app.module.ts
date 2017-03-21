@@ -4,44 +4,28 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent}  from './app.component';
 import {NavBarComponent} from './navbar.component';
 import {HomeComponent} from "./home.component";
-import {UsersComponent} from "./users/users.component";
-import {PostsComponent} from "./posts/posts.component";
 import {RootRoute} from "./app.routing";
-import {HttpModule, JsonpModule} from "@angular/http";
-import {UserService} from "./users/users.service";
-import {UserAddComponent} from "./users/useradd.component";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {NavGuard} from "./nav-guard.service";
 import {NotFoundComponent} from "./notfound.component";
-import {PostService} from "./posts/post.service";
-import {SpinnerComponent} from "./shared/spinner.component";
-import {PaginationComponent} from "./shared/pagination.component";
+import {PostsModule} from "./posts/posts.module";
+import {UsersModule} from "./users/users.module";
+import {NavGuard} from "./nav-guard.service";
 
 
 @NgModule({
   imports: [
     BrowserModule,
     RootRoute,
-    HttpModule,
-    JsonpModule,
-    FormsModule,
-    ReactiveFormsModule
+    PostsModule,
+    UsersModule
   ],
   declarations: [
     AppComponent,
     NavBarComponent,
     HomeComponent,
-    UsersComponent,
-    PostsComponent,
-    UserAddComponent,
-    NotFoundComponent,
-    SpinnerComponent,
-    PaginationComponent
+    NotFoundComponent
   ],
   providers: [
-    UserService,
-    NavGuard,
-    PostService
+    NavGuard
   ],
   bootstrap: [
     AppComponent
