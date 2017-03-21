@@ -8,13 +8,17 @@ import {RootRoute} from "./app.routing";
 import {NotFoundComponent} from "./notfound.component";
 import {PostsModule} from "./posts/posts.module";
 import {UsersModule} from "./users/users.module";
+import {PostRouting} from "./posts/posts.routing";
+import {UserRouting} from "./users/users.routing";
 
 @NgModule({
   imports: [
     BrowserModule,
-    RootRoute,
     PostsModule,
-    UsersModule
+    UsersModule,
+    PostRouting,
+    UserRouting,
+    RootRoute
   ],
   declarations: [
     AppComponent,

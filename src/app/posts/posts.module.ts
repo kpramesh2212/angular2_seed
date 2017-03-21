@@ -16,7 +16,7 @@ import {SharedModule} from "../shared/shared.module";
     PostsComponent
   ],
   exports: [
-    PostsComponent
+
   ],
   providers: [
     PostService

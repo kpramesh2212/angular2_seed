@@ -24,8 +24,6 @@ import {RouterModule} from "@angular/router";
     UserService
   ],
   exports: [
-    UsersComponent,
-    UserAddComponent
   ]
 })
 export class UsersModule {
